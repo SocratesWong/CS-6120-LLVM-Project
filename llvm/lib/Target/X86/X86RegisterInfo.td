@@ -71,9 +71,9 @@ def R9B  : X86Reg<"r9b",   9>;
 def R10B : X86Reg<"r10b", 10>;
 def R11B : X86Reg<"r11b", 11>;
 def R12B : X86Reg<"r12b", 12>;
-def R13B : X86Reg<"r13b", 13>;
-def R14B : X86Reg<"r14b", 14>;
-def R15B : X86Reg<"r15b", 15>;
+//def R13B : X86Reg<"r13b", 13>;
+//def R14B : X86Reg<"r14b", 14>;
+//def R15B : X86Reg<"r15b", 15>;
 }
 
 let isArtificial = 1 in {
@@ -87,9 +87,9 @@ def R9BH  : X86Reg<"", -1>;
 def R10BH : X86Reg<"", -1>;
 def R11BH : X86Reg<"", -1>;
 def R12BH : X86Reg<"", -1>;
-def R13BH : X86Reg<"", -1>;
-def R14BH : X86Reg<"", -1>;
-def R15BH : X86Reg<"", -1>;
+//def R13BH : X86Reg<"", -1>;
+//def R14BH : X86Reg<"", -1>;
+//def R15BH : X86Reg<"", -1>;
 // High word of the low 32 bits of the super-register:
 def HAX   : X86Reg<"", -1>;
 def HDX   : X86Reg<"", -1>;
@@ -105,9 +105,9 @@ def R9WH  : X86Reg<"", -1>;
 def R10WH : X86Reg<"", -1>;
 def R11WH : X86Reg<"", -1>;
 def R12WH : X86Reg<"", -1>;
-def R13WH : X86Reg<"", -1>;
-def R14WH : X86Reg<"", -1>;
-def R15WH : X86Reg<"", -1>;
+//def R13WH : X86Reg<"", -1>;
+//def R14WH : X86Reg<"", -1>;
+//def R15WH : X86Reg<"", -1>;
 }
 
 // 16-bit registers
@@ -133,9 +133,9 @@ def R9W  : X86Reg<"r9w",   9, [R9B,R9BH]>;
 def R10W : X86Reg<"r10w", 10, [R10B,R10BH]>;
 def R11W : X86Reg<"r11w", 11, [R11B,R11BH]>;
 def R12W : X86Reg<"r12w", 12, [R12B,R12BH]>;
-def R13W : X86Reg<"r13w", 13, [R13B,R13BH]>;
-def R14W : X86Reg<"r14w", 14, [R14B,R14BH]>;
-def R15W : X86Reg<"r15w", 15, [R15B,R15BH]>;
+//def R13W : X86Reg<"r13w", 13, [R13B,R13BH]>;
+//def R14W : X86Reg<"r14w", 14, [R14B,R14BH]>;
+//def R15W : X86Reg<"r15w", 15, [R15B,R15BH]>;
 }
 
 // 32-bit registers
@@ -159,9 +159,9 @@ def R9D  : X86Reg<"r9d",   9, [R9W,R9WH]>;
 def R10D : X86Reg<"r10d", 10, [R10W,R10WH]>;
 def R11D : X86Reg<"r11d", 11, [R11W,R11WH]>;
 def R12D : X86Reg<"r12d", 12, [R12W,R12WH]>;
-def R13D : X86Reg<"r13d", 13, [R13W,R13WH]>;
-def R14D : X86Reg<"r14d", 14, [R14W,R14WH]>;
-def R15D : X86Reg<"r15d", 15, [R15W,R15WH]>;
+//def R13D : X86Reg<"r13d", 13, [R13W,R13WH]>;
+//def R14D : X86Reg<"r14d", 14, [R14W,R14WH]>;
+//def R15D : X86Reg<"r15d", 15, [R15W,R15WH]>;
 }
 
 // 64-bit registers, X86-64 only
@@ -182,9 +182,9 @@ def R9  : X86Reg<"r9",   9, [R9D]>,  DwarfRegNum<[ 9, -2, -2]>;
 def R10 : X86Reg<"r10", 10, [R10D]>, DwarfRegNum<[10, -2, -2]>;
 def R11 : X86Reg<"r11", 11, [R11D]>, DwarfRegNum<[11, -2, -2]>;
 def R12 : X86Reg<"r12", 12, [R12D]>, DwarfRegNum<[12, -2, -2]>;
-def R13 : X86Reg<"r13", 13, [R13D]>, DwarfRegNum<[13, -2, -2]>;
-def R14 : X86Reg<"r14", 14, [R14D]>, DwarfRegNum<[14, -2, -2]>;
-def R15 : X86Reg<"r15", 15, [R15D]>, DwarfRegNum<[15, -2, -2]>;
+//def R13 : X86Reg<"r13", 13, [R13D]>, DwarfRegNum<[13, -2, -2]>;
+//def R14 : X86Reg<"r14", 14, [R14D]>, DwarfRegNum<[14, -2, -2]>;
+//def R15 : X86Reg<"r15", 15, [R15D]>, DwarfRegNum<[15, -2, -2]>;
 def RIP : X86Reg<"rip",  0, [EIP]>,  DwarfRegNum<[16, -2, -2]>;
 }}
 
@@ -195,8 +195,8 @@ def MM2 : X86Reg<"mm2", 2>, DwarfRegNum<[43, 31, 31]>;
 def MM3 : X86Reg<"mm3", 3>, DwarfRegNum<[44, 32, 32]>;
 def MM4 : X86Reg<"mm4", 4>, DwarfRegNum<[45, 33, 33]>;
 def MM5 : X86Reg<"mm5", 5>, DwarfRegNum<[46, 34, 34]>;
-def MM6 : X86Reg<"mm6", 6>, DwarfRegNum<[47, 35, 35]>;
-def MM7 : X86Reg<"mm7", 7>, DwarfRegNum<[48, 36, 36]>;
+//def MM6 : X86Reg<"mm6", 6>, DwarfRegNum<[47, 35, 35]>;
+//def MM7 : X86Reg<"mm7", 7>, DwarfRegNum<[48, 36, 36]>;
 
 // Pseudo Floating Point registers
 def FP0 : X86Reg<"fp0", 0>;
@@ -205,8 +205,8 @@ def FP2 : X86Reg<"fp2", 0>;
 def FP3 : X86Reg<"fp3", 0>;
 def FP4 : X86Reg<"fp4", 0>;
 def FP5 : X86Reg<"fp5", 0>;
-def FP6 : X86Reg<"fp6", 0>;
-def FP7 : X86Reg<"fp7", 0>;
+//def FP6 : X86Reg<"fp6", 0>;
+//def FP7 : X86Reg<"fp7", 0>;
 
 // XMM Registers, used by the various SSE instruction set extensions.
 def XMM0: X86Reg<"xmm0", 0>, DwarfRegNum<[17, 21, 21]>;
@@ -237,21 +237,21 @@ def XMM20:  X86Reg<"xmm20", 20>, DwarfRegNum<[71, -2, -2]>;
 def XMM21:  X86Reg<"xmm21", 21>, DwarfRegNum<[72, -2, -2]>;
 def XMM22:  X86Reg<"xmm22", 22>, DwarfRegNum<[73, -2, -2]>;
 def XMM23:  X86Reg<"xmm23", 23>, DwarfRegNum<[74, -2, -2]>;
-def XMM24:  X86Reg<"xmm24", 24>, DwarfRegNum<[75, -2, -2]>;
-def XMM25:  X86Reg<"xmm25", 25>, DwarfRegNum<[76, -2, -2]>;
-def XMM26:  X86Reg<"xmm26", 26>, DwarfRegNum<[77, -2, -2]>;
-def XMM27:  X86Reg<"xmm27", 27>, DwarfRegNum<[78, -2, -2]>;
-def XMM28:  X86Reg<"xmm28", 28>, DwarfRegNum<[79, -2, -2]>;
-def XMM29:  X86Reg<"xmm29", 29>, DwarfRegNum<[80, -2, -2]>;
-def XMM30:  X86Reg<"xmm30", 30>, DwarfRegNum<[81, -2, -2]>;
-def XMM31:  X86Reg<"xmm31", 31>, DwarfRegNum<[82, -2, -2]>;
+//def XMM24:  X86Reg<"xmm24", 24>, DwarfRegNum<[75, -2, -2]>;
+//def XMM25:  X86Reg<"xmm25", 25>, DwarfRegNum<[76, -2, -2]>;
+//def XMM26:  X86Reg<"xmm26", 26>, DwarfRegNum<[77, -2, -2]>;
+//def XMM27:  X86Reg<"xmm27", 27>, DwarfRegNum<[78, -2, -2]>;
+//def XMM28:  X86Reg<"xmm28", 28>, DwarfRegNum<[79, -2, -2]>;
+//def XMM29:  X86Reg<"xmm29", 29>, DwarfRegNum<[80, -2, -2]>;
+//def XMM30:  X86Reg<"xmm30", 30>, DwarfRegNum<[81, -2, -2]>;
+//def XMM31:  X86Reg<"xmm31", 31>, DwarfRegNum<[82, -2, -2]>;
 
 } // CostPerUse
 
 // YMM0-15 registers, used by AVX instructions and
 // YMM16-31 registers, used by AVX-512 instructions.
 let SubRegIndices = [sub_xmm] in {
-  foreach  Index = 0-31 in {
+  foreach  Index = 0-23 in {
     def YMM#Index : X86Reg<"ymm"#Index, Index, [!cast<X86Reg>("XMM"#Index)]>,
                     DwarfRegAlias<!cast<X86Reg>("XMM"#Index)>;
   }
@@ -259,7 +259,7 @@ let SubRegIndices = [sub_xmm] in {
 
 // ZMM Registers, used by AVX-512 instructions.
 let SubRegIndices = [sub_ymm] in {
-  foreach  Index = 0-31 in {
+  foreach  Index = 0-23 in {
     def ZMM#Index : X86Reg<"zmm"#Index, Index, [!cast<X86Reg>("YMM"#Index)]>,
                     DwarfRegAlias<!cast<X86Reg>("XMM"#Index)>;
   }
@@ -275,8 +275,8 @@ def TMM2:  X86Reg<"tmm2",   2>;
 def TMM3:  X86Reg<"tmm3",   3>;
 def TMM4:  X86Reg<"tmm4",   4>;
 def TMM5:  X86Reg<"tmm5",   5>;
-def TMM6:  X86Reg<"tmm6",   6>;
-def TMM7:  X86Reg<"tmm7",   7>;
+//def TMM6:  X86Reg<"tmm6",   6>;
+//def TMM7:  X86Reg<"tmm7",   7>;
 
 // Mask Registers, used by AVX-512 instructions.
 def K0 : X86Reg<"k0", 0>, DwarfRegNum<[118,  93,  93]>;
@@ -285,8 +285,8 @@ def K2 : X86Reg<"k2", 2>, DwarfRegNum<[120,  95,  95]>;
 def K3 : X86Reg<"k3", 3>, DwarfRegNum<[121,  96,  96]>;
 def K4 : X86Reg<"k4", 4>, DwarfRegNum<[122,  97,  97]>;
 def K5 : X86Reg<"k5", 5>, DwarfRegNum<[123,  98,  98]>;
-def K6 : X86Reg<"k6", 6>, DwarfRegNum<[124,  99,  99]>;
-def K7 : X86Reg<"k7", 7>, DwarfRegNum<[125, 100, 100]>;
+//def K6 : X86Reg<"k6", 6>, DwarfRegNum<[124,  99,  99]>;
+//def K7 : X86Reg<"k7", 7>, DwarfRegNum<[125, 100, 100]>;
 
 // Floating point stack registers. These don't map one-to-one to the FP
 // pseudo registers, but we still mark them as aliasing FP registers. That
@@ -298,8 +298,8 @@ def ST2 : X86Reg<"st(2)", 2>, DwarfRegNum<[35, 14, 13]>;
 def ST3 : X86Reg<"st(3)", 3>, DwarfRegNum<[36, 15, 14]>;
 def ST4 : X86Reg<"st(4)", 4>, DwarfRegNum<[37, 16, 15]>;
 def ST5 : X86Reg<"st(5)", 5>, DwarfRegNum<[38, 17, 16]>;
-def ST6 : X86Reg<"st(6)", 6>, DwarfRegNum<[39, 18, 17]>;
-def ST7 : X86Reg<"st(7)", 7>, DwarfRegNum<[40, 19, 18]>;
+//def ST6 : X86Reg<"st(6)", 6>, DwarfRegNum<[39, 18, 17]>;
+//def ST7 : X86Reg<"st(7)", 7>, DwarfRegNum<[40, 19, 18]>;
 
 // Floating-point status word
 def FPSW : X86Reg<"fpsr", 0>;
@@ -401,7 +401,7 @@ def SSP : X86Reg<"ssp", 0>;
 // cannot be encoded.
 def GR8 : RegisterClass<"X86", [i8],  8,
                         (add AL, CL, DL, AH, CH, DH, BL, BH, SIL, DIL, BPL, SPL,
-                             R8B, R9B, R10B, R11B, R14B, R15B, R12B, R13B)> {
+                             R8B, R9B, R10B, R11B /*, R14B, R15B, R12B, R13B*/)> {
   let AltOrders = [(sub GR8, AH, BH, CH, DH)];
   let AltOrderSelect = [{
     return MF.getSubtarget<X86Subtarget>().is64Bit();
@@ -410,22 +410,22 @@ def GR8 : RegisterClass<"X86", [i8],  8,
 
 let isAllocatable = 0 in
 def GRH8 : RegisterClass<"X86", [i8],  8,
-                         (add SIH, DIH, BPH, SPH, R8BH, R9BH, R10BH, R11BH,
-                              R12BH, R13BH, R14BH, R15BH)>;
+                         (add SIH, DIH, BPH, SPH, R8BH, R9BH, R10BH, R11BH /*,
+                              R12BH, R13BH, R14BH, R15BH*/)>;
 
 def GR16 : RegisterClass<"X86", [i16], 16,
                          (add AX, CX, DX, SI, DI, BX, BP, SP,
-                              R8W, R9W, R10W, R11W, R14W, R15W, R12W, R13W)>;
+                              R8W, R9W, R10W, R11W /*, R14W, R15W, R12W, R13W*/)>;
 
 let isAllocatable = 0 in
 def GRH16 : RegisterClass<"X86", [i16], 16,
                           (add HAX, HCX, HDX, HSI, HDI, HBX, HBP, HSP, HIP,
-                               R8WH, R9WH, R10WH, R11WH, R12WH, R13WH, R14WH,
-                               R15WH)>;
+                               R8WH, R9WH, R10WH, R11WH /*, R12WH, R13WH, R14WH,
+                               R15WH*/)>;
 
 def GR32 : RegisterClass<"X86", [i32], 32,
                          (add EAX, ECX, EDX, ESI, EDI, EBX, EBP, ESP,
-                              R8D, R9D, R10D, R11D, R14D, R15D, R12D, R13D)>;
+                              R8D, R9D, R10D, R11D /*, R14D, R15D, R12D, R13D*/)>;
 
 // GR64 - 64-bit GPRs. This oddly includes RIP, which isn't accurate, since
 // RIP isn't really a register and it can't be used anywhere except in an
@@ -434,7 +434,7 @@ def GR32 : RegisterClass<"X86", [i32], 32,
 // tests because of the inclusion of RIP in this register class.
 def GR64 : RegisterClass<"X86", [i64], 64,
                          (add RAX, RCX, RDX, RSI, RDI, R8, R9, R10, R11,
-                              RBX, R14, R15, R12, R13, RBP, RSP, RIP)>;
+                              RBX, /*R14, R15, R12, R13,*/ RBP, RSP, RIP)>;
 
 // Segment registers for use by MOV instructions (and others) that have a
 //   segment register as one operand.  Always contain a 16-bit segment
@@ -533,7 +533,7 @@ def GR32_DIBP : RegisterClass<"X86", [i32], 32, (add EDI, EBP)>;
 def GR32_BPSP : RegisterClass<"X86", [i32], 32, (add EBP, ESP)>;
 
 // Scalar SSE2 floating point registers.
-def FR32 : RegisterClass<"X86", [f32], 32, (sequence "XMM%u", 0, 15)>;
+def FR32 : RegisterClass<"X86", [f32], 32, (sequence "XMM%u", 0, 11)>;
 
 def FR64 : RegisterClass<"X86", [f64], 64, (add FR32)>;
 
@@ -545,19 +545,19 @@ def FR64 : RegisterClass<"X86", [f64], 64, (add FR32)>;
 // command line option or something.
 
 
-def RFP32 : RegisterClass<"X86",[f32], 32, (sequence "FP%u", 0, 6)>;
+def RFP32 : RegisterClass<"X86",[f32], 32, (sequence "FP%u", 0, 5)>;
 def RFP64 : RegisterClass<"X86",[f64], 32, (add RFP32)>;
 def RFP80 : RegisterClass<"X86",[f80], 32, (add RFP32)>;
 
 // st(7) may be is not allocatable.
-def RFP80_7 : RegisterClass<"X86",[f80], 32, (add FP7)> {
+/*def RFP80_7 : RegisterClass<"X86",[f80], 32, (add FP7)> {
   let isAllocatable = 0;
-}
+}*/
 
 // Floating point stack registers (these are not allocatable by the
 // register allocator - the floating point stackifier is responsible
 // for transforming FPn allocations to STn registers)
-def RST : RegisterClass<"X86", [f80, f64, f32], 32, (sequence "ST%u", 0, 7)> {
+def RST : RegisterClass<"X86", [f80, f64, f32], 32, (sequence "ST%u", 0, 5)> {
   let isAllocatable = 0;
 }
 
@@ -566,11 +566,11 @@ def RSTi : RegisterOperand<RST, "printSTiRegOperand">;
 
 // Generic vector registers: VR64 and VR128.
 // Ensure that float types are declared first - only float is legal on SSE1.
-def VR64: RegisterClass<"X86", [x86mmx], 64, (sequence "MM%u", 0, 7)>;
+def VR64: RegisterClass<"X86", [x86mmx], 64, (sequence "MM%u", 0, 5)>;
 def VR128 : RegisterClass<"X86", [v4f32, v2f64, v16i8, v8i16, v4i32, v2i64, f128],
                           128, (add FR32)>;
 def VR256 : RegisterClass<"X86", [v8f32, v4f64, v32i8, v16i16, v8i32, v4i64],
-                          256, (sequence "YMM%u", 0, 15)>;
+                          256, (sequence "YMM%u", 0, 11)>;
 
 // Status flags registers.
 def CCR : RegisterClass<"X86", [i32], 32, (add EFLAGS)> {
@@ -588,14 +588,14 @@ def DFCCR : RegisterClass<"X86", [i32], 32, (add DF)> {
 
 // AVX-512 vector/mask registers.
 def VR512 : RegisterClass<"X86", [v16f32, v8f64, v64i8, v32i16, v16i32, v8i64],
-                          512, (sequence "ZMM%u", 0, 31)>;
+                          512, (sequence "ZMM%u", 0, 23)>;
 
 // Represents the lower 16 registers that have VEX/legacy encodable subregs.
 def VR512_0_15 : RegisterClass<"X86", [v16f32, v8f64, v64i8, v32i16, v16i32, v8i64],
-                               512, (sequence "ZMM%u", 0, 15)>;
+                               512, (sequence "ZMM%u", 0, 11)>;
 
 // Scalar AVX-512 floating point registers.
-def FR32X : RegisterClass<"X86", [f32], 32, (sequence "XMM%u", 0, 31)>;
+def FR32X : RegisterClass<"X86", [f32], 32, (sequence "XMM%u", 0, 23)>;
 
 def FR64X : RegisterClass<"X86", [f64], 64, (add FR32X)>;
 
@@ -603,10 +603,10 @@ def FR64X : RegisterClass<"X86", [f64], 64, (add FR32X)>;
 def VR128X : RegisterClass<"X86", [v4f32, v2f64, v16i8, v8i16, v4i32, v2i64, f128],
                            128, (add FR32X)>;
 def VR256X : RegisterClass<"X86", [v8f32, v4f64, v32i8, v16i16, v8i32, v4i64],
-                           256, (sequence "YMM%u", 0, 31)>;
+                           256, (sequence "YMM%u", 0, 23)>;
 
 // Mask registers
-def VK1     : RegisterClass<"X86", [v1i1],  16,  (sequence "K%u", 0, 7)> {let Size = 16;}
+def VK1     : RegisterClass<"X86", [v1i1],  16,  (sequence "K%u", 0, 5)> {let Size = 16;}
 def VK2     : RegisterClass<"X86", [v2i1],  16,  (add VK1)> {let Size = 16;}
 def VK4     : RegisterClass<"X86", [v4i1],  16,  (add VK2)> {let Size = 16;}
 def VK8     : RegisterClass<"X86", [v8i1],  16,  (add VK4)> {let Size = 16;}
@@ -616,7 +616,7 @@ def VK64    : RegisterClass<"X86", [v64i1], 64, (add VK32)> {let Size = 64;}
 
 // Mask register pairs
 def KPAIRS : RegisterTuples<[sub_mask_0, sub_mask_1],
-                             [(add K0, K2, K4, K6), (add K1, K3, K5, K7)]>;
+                             [(add K0, K2, K4), (add K1, K3, K5)]>;
 
 def VK1PAIR   : RegisterClass<"X86", [untyped], 16, (add KPAIRS)> {let Size = 32;}
 def VK2PAIR   : RegisterClass<"X86", [untyped], 16, (add KPAIRS)> {let Size = 32;}
@@ -638,7 +638,7 @@ def BNDR : RegisterClass<"X86", [v2i64], 128, (sequence "BND%u", 0, 3)>;
 // Tiles
 let CopyCost = -1 in // Don't allow copying of tile registers
 def TILE : RegisterClass<"X86", [v256i32], 8192,
-                         (sequence "TMM%u", 0, 7)> {let Size = 8192;}
+                         (sequence "TMM%u", 0, 5)> {let Size = 8192;}
 def TILECFG : RegisterClass<"X86", [untyped], 512, (add TMMCFG)> {
   let CopyCost = -1;  // Don't allow copying of tile config registers.
   let isAllocatable = 1;

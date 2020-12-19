@@ -445,11 +445,11 @@ let SchedRW = [WriteSystem] in {
 // All calls clobber the non-callee saved registers. ESP is marked as
 // a use to prevent stack-pointer assignments that appear immediately
 // before calls from potentially appearing dead.
-let Defs = [EAX, ECX, EDX, FP0, FP1, FP2, FP3, FP4, FP5, FP6, FP7,
-            ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7,
-            MM0, MM1, MM2, MM3, MM4, MM5, MM6, MM7,
+let Defs = [EAX, ECX, EDX, FP0, FP1, FP2, FP3, FP4, FP5, /*FP6, FP7,*/
+            ST0, ST1, ST2, ST3, ST4, ST5, /*ST6, ST7,*/
+            MM0, MM1, MM2, MM3, MM4, MM5, /*MM6, MM7,*/
             XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6, XMM7,
-            XMM8, XMM9, XMM10, XMM11, XMM12, XMM13, XMM14, XMM15, EFLAGS, DF],
+            XMM8, XMM9, XMM10, XMM11,/* XMM12, XMM13, XMM14, XMM15,*/ EFLAGS, DF],
     usesCustomInserter = 1, Uses = [ESP, SSP] in {
 def TLS_addr32 : I<0, Pseudo, (outs), (ins i32mem:$sym),
                   "# TLS_addr32",
@@ -465,11 +465,11 @@ def TLS_base_addr32 : I<0, Pseudo, (outs), (ins i32mem:$sym),
 // a use to prevent stack-pointer assignments that appear immediately
 // before calls from potentially appearing dead.
 let Defs = [RAX, RCX, RDX, RSI, RDI, R8, R9, R10, R11,
-            FP0, FP1, FP2, FP3, FP4, FP5, FP6, FP7,
-            ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7,
-            MM0, MM1, MM2, MM3, MM4, MM5, MM6, MM7,
+            FP0, FP1, FP2, FP3, FP4, FP5, /*FP6, FP7,*/
+            ST0, ST1, ST2, ST3, ST4, ST5, /*ST6, ST7,*/
+            MM0, MM1, MM2, MM3, MM4, MM5, /*MM6, MM7,*/
             XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6, XMM7,
-            XMM8, XMM9, XMM10, XMM11, XMM12, XMM13, XMM14, XMM15, EFLAGS, DF],
+            XMM8, XMM9, XMM10, XMM11, /*XMM12, XMM13, XMM14, XMM15,*/ EFLAGS, DF],
     usesCustomInserter = 1, Uses = [RSP, SSP] in {
 def TLS_addr64 : I<0, Pseudo, (outs), (ins i64mem:$sym),
                    "# TLS_addr64",

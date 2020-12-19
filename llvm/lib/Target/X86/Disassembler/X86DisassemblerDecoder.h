@@ -86,9 +86,6 @@ namespace X86Disassembler {
   ENTRY(R10B)         \
   ENTRY(R11B)         \
   ENTRY(R12B)         \
-  ENTRY(R13B)         \
-  ENTRY(R14B)         \
-  ENTRY(R15B)         \
   ENTRY(SPL)          \
   ENTRY(BPL)          \
   ENTRY(SIL)          \
@@ -107,10 +104,8 @@ namespace X86Disassembler {
   ENTRY(R9W)            \
   ENTRY(R10W)           \
   ENTRY(R11W)           \
-  ENTRY(R12W)           \
-  ENTRY(R13W)           \
-  ENTRY(R14W)           \
-  ENTRY(R15W)
+  ENTRY(R12W)           
+ 
 
 #define REGS_16BIT    \
   ENTRY(AX)           \
@@ -125,11 +120,7 @@ namespace X86Disassembler {
   ENTRY(R9W)          \
   ENTRY(R10W)         \
   ENTRY(R11W)         \
-  ENTRY(R12W)         \
-  ENTRY(R13W)         \
-  ENTRY(R14W)         \
-  ENTRY(R15W)
-
+  ENTRY(R12W)         
 #define EA_BASES_32BIT  \
   ENTRY(EAX)            \
   ENTRY(ECX)            \
@@ -143,10 +134,7 @@ namespace X86Disassembler {
   ENTRY(R9D)            \
   ENTRY(R10D)           \
   ENTRY(R11D)           \
-  ENTRY(R12D)           \
-  ENTRY(R13D)           \
-  ENTRY(R14D)           \
-  ENTRY(R15D)
+  ENTRY(R12D)           
 
 #define REGS_32BIT  \
   ENTRY(EAX)        \
@@ -161,10 +149,7 @@ namespace X86Disassembler {
   ENTRY(R9D)        \
   ENTRY(R10D)       \
   ENTRY(R11D)       \
-  ENTRY(R12D)       \
-  ENTRY(R13D)       \
-  ENTRY(R14D)       \
-  ENTRY(R15D)
+  ENTRY(R12D)       
 
 #define EA_BASES_64BIT  \
   ENTRY(RAX)            \
@@ -179,10 +164,7 @@ namespace X86Disassembler {
   ENTRY(R9)             \
   ENTRY(R10)            \
   ENTRY(R11)            \
-  ENTRY(R12)            \
-  ENTRY(R13)            \
-  ENTRY(R14)            \
-  ENTRY(R15)
+  ENTRY(R12)            
 
 #define REGS_64BIT  \
   ENTRY(RAX)        \
@@ -197,10 +179,7 @@ namespace X86Disassembler {
   ENTRY(R9)         \
   ENTRY(R10)        \
   ENTRY(R11)        \
-  ENTRY(R12)        \
-  ENTRY(R13)        \
-  ENTRY(R14)        \
-  ENTRY(R15)
+  ENTRY(R12)        
 
 #define REGS_MMX  \
   ENTRY(MM0)      \
@@ -208,9 +187,7 @@ namespace X86Disassembler {
   ENTRY(MM2)      \
   ENTRY(MM3)      \
   ENTRY(MM4)      \
-  ENTRY(MM5)      \
-  ENTRY(MM6)      \
-  ENTRY(MM7)
+  ENTRY(MM5)      
 
 #define REGS_XMM  \
   ENTRY(XMM0)     \
@@ -236,15 +213,7 @@ namespace X86Disassembler {
   ENTRY(XMM20)    \
   ENTRY(XMM21)    \
   ENTRY(XMM22)    \
-  ENTRY(XMM23)    \
-  ENTRY(XMM24)    \
-  ENTRY(XMM25)    \
-  ENTRY(XMM26)    \
-  ENTRY(XMM27)    \
-  ENTRY(XMM28)    \
-  ENTRY(XMM29)    \
-  ENTRY(XMM30)    \
-  ENTRY(XMM31)
+  ENTRY(XMM23)    
 
 #define REGS_YMM  \
   ENTRY(YMM0)     \
@@ -270,15 +239,8 @@ namespace X86Disassembler {
   ENTRY(YMM20)    \
   ENTRY(YMM21)    \
   ENTRY(YMM22)    \
-  ENTRY(YMM23)    \
-  ENTRY(YMM24)    \
-  ENTRY(YMM25)    \
-  ENTRY(YMM26)    \
-  ENTRY(YMM27)    \
-  ENTRY(YMM28)    \
-  ENTRY(YMM29)    \
-  ENTRY(YMM30)    \
-  ENTRY(YMM31)
+  ENTRY(YMM23)    
+ 
 
 #define REGS_ZMM  \
   ENTRY(ZMM0)     \
@@ -304,15 +266,7 @@ namespace X86Disassembler {
   ENTRY(ZMM20)    \
   ENTRY(ZMM21)    \
   ENTRY(ZMM22)    \
-  ENTRY(ZMM23)    \
-  ENTRY(ZMM24)    \
-  ENTRY(ZMM25)    \
-  ENTRY(ZMM26)    \
-  ENTRY(ZMM27)    \
-  ENTRY(ZMM28)    \
-  ENTRY(ZMM29)    \
-  ENTRY(ZMM30)    \
-  ENTRY(ZMM31)
+  ENTRY(ZMM23)     
 
 #define REGS_MASKS \
   ENTRY(K0)        \
@@ -320,15 +274,12 @@ namespace X86Disassembler {
   ENTRY(K2)        \
   ENTRY(K3)        \
   ENTRY(K4)        \
-  ENTRY(K5)        \
-  ENTRY(K6)        \
-  ENTRY(K7)
+  ENTRY(K5)        
 
 #define REGS_MASK_PAIRS \
   ENTRY(K0_K1)     \
   ENTRY(K2_K3)     \
-  ENTRY(K4_K5)     \
-  ENTRY(K6_K7)
+  ENTRY(K4_K5)     
 
 #define REGS_SEGMENT \
   ENTRY(ES)          \
@@ -351,10 +302,7 @@ namespace X86Disassembler {
   ENTRY(DR9)        \
   ENTRY(DR10)       \
   ENTRY(DR11)       \
-  ENTRY(DR12)       \
-  ENTRY(DR13)       \
-  ENTRY(DR14)       \
-  ENTRY(DR15)
+  ENTRY(DR12)       
 
 #define REGS_CONTROL  \
   ENTRY(CR0)          \
@@ -387,9 +335,7 @@ namespace X86Disassembler {
   ENTRY(TMM2)     \
   ENTRY(TMM3)     \
   ENTRY(TMM4)     \
-  ENTRY(TMM5)     \
-  ENTRY(TMM6)     \
-  ENTRY(TMM7)
+  ENTRY(TMM5)     
 
 #define ALL_EA_BASES  \
   EA_BASES_16BIT      \

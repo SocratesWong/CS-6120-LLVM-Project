@@ -342,28 +342,28 @@ struct X86Operand final : public MCParsedAsmOperand {
   }
 
   bool isMem64_RC128X() const {
-    return isMem64() && isMemIndexReg(X86::XMM0, X86::XMM31);
+    return isMem64() && isMemIndexReg(X86::XMM0, X86::XMM23);
   }
   bool isMem128_RC128X() const {
-    return isMem128() && isMemIndexReg(X86::XMM0, X86::XMM31);
+    return isMem128() && isMemIndexReg(X86::XMM0, X86::XMM23);
   }
   bool isMem128_RC256X() const {
-    return isMem128() && isMemIndexReg(X86::YMM0, X86::YMM31);
+    return isMem128() && isMemIndexReg(X86::YMM0, X86::YMM23);
   }
   bool isMem256_RC128X() const {
-    return isMem256() && isMemIndexReg(X86::XMM0, X86::XMM31);
+    return isMem256() && isMemIndexReg(X86::XMM0, X86::XMM23);
   }
   bool isMem256_RC256X() const {
-    return isMem256() && isMemIndexReg(X86::YMM0, X86::YMM31);
+    return isMem256() && isMemIndexReg(X86::YMM0, X86::YMM23);
   }
   bool isMem256_RC512() const {
-    return isMem256() && isMemIndexReg(X86::ZMM0, X86::ZMM31);
+    return isMem256() && isMemIndexReg(X86::ZMM0, X86::ZMM23);
   }
   bool isMem512_RC256X() const {
-    return isMem512() && isMemIndexReg(X86::YMM0, X86::YMM31);
+    return isMem512() && isMemIndexReg(X86::YMM0, X86::YMM23);
   }
   bool isMem512_RC512() const {
-    return isMem512() && isMemIndexReg(X86::ZMM0, X86::ZMM31);
+    return isMem512() && isMemIndexReg(X86::ZMM0, X86::ZMM23);
   }
 
   bool isAbsMem() const {
@@ -562,10 +562,10 @@ struct X86Operand final : public MCParsedAsmOperand {
     case X86::K5:
       Reg = X86::K4_K5;
       break;
-    case X86::K6:
-    case X86::K7:
-      Reg = X86::K6_K7;
-      break;
+    //case X86::K6:
+    //case X86::K7:
+    //  Reg = X86::K6_K7;
+    //  break;
     }
     Inst.addOperand(MCOperand::createReg(Reg));
   }

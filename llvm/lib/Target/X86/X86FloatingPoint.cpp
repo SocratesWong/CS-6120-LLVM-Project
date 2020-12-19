@@ -128,8 +128,8 @@ namespace {
       for (MachineBasicBlock::livein_iterator I = MBB->livein_begin();
            I != MBB->livein_end(); ) {
         MCPhysReg Reg = I->PhysReg;
-        static_assert(X86::FP6 - X86::FP0 == 6, "sequential regnums");
-        if (Reg >= X86::FP0 && Reg <= X86::FP6) {
+        static_assert(X86::FP5 - X86::FP0 == 5, "sequential regnums");
+        if (Reg >= X86::FP0 && Reg <= X86::FP5) {
           Mask |= 1 << (Reg - X86::FP0);
           if (RemoveFPs) {
             I = MBB->removeLiveIn(I);
@@ -315,7 +315,7 @@ FunctionPass *llvm::createX86FloatingPointStackifierPass() { return new FPS(); }
 static unsigned getFPReg(const MachineOperand &MO) {
   assert(MO.isReg() && "Expected an FP register!");
   Register Reg = MO.getReg();
-  assert(Reg >= X86::FP0 && Reg <= X86::FP6 && "Expected FP register!");
+  assert(Reg >= X86::FP0 && Reg <= X86::FP5 && "Expected FP register!");
   return Reg - X86::FP0;
 }
 
@@ -327,7 +327,7 @@ bool FPS::runOnMachineFunction(MachineFunction &MF) {
   // function.  If it is all integer, there is nothing for us to do!
   bool FPIsUsed = false;
 
-  static_assert(X86::FP6 == X86::FP0+6, "Register enums aren't sorted right!");
+  static_assert(X86::FP5 == X86::FP0+5, "Register enums aren't sorted right!");
   const MachineRegisterInfo &MRI = MF.getRegInfo();
   for (unsigned i = 0; i <= 6; ++i)
     if (!MRI.reg_nodbg_empty(X86::FP0 + i)) {
@@ -469,8 +469,8 @@ bool FPS::processBasicBlock(MachineFunction &MF, MachineBasicBlock &BB) {
       unsigned Reg = DeadRegs[i];
       // Check if Reg is live on the stack. An inline-asm register operand that
       // is in the clobber list and marked dead might not be live on the stack.
-      static_assert(X86::FP7 - X86::FP0 == 7, "sequential FP regnumbers");
-      if (Reg >= X86::FP0 && Reg <= X86::FP6 && isLive(Reg-X86::FP0)) {
+      static_assert(X86::FP5 - X86::FP0 == 5, "sequential FP regnumbers");
+      if (Reg >= X86::FP0 && Reg <= X86::FP5 && isLive(Reg-X86::FP0)) {
         LLVM_DEBUG(dbgs() << "Register FP#" << Reg - X86::FP0 << " is dead!\n");
         freeStackSlotAfter(I, Reg-X86::FP0);
       }
@@ -981,7 +981,7 @@ void FPS::handleCall(MachineBasicBlock::iterator &I) {
 
   for (unsigned i = 0, e = MI.getNumOperands(); i != e; ++i) {
     MachineOperand &Op = MI.getOperand(i);
-    if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP6)
+    if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP5)
       continue;
 
     assert(Op.isImplicit() && "Expected implicit def/use");
@@ -1022,7 +1022,7 @@ void FPS::handleReturn(MachineBasicBlock::iterator &I) {
 
   for (unsigned i = 0, e = MI.getNumOperands(); i != e; ++i) {
     MachineOperand &Op = MI.getOperand(i);
-    if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP6)
+    if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP5)
       continue;
     // FP Register uses must be kills unless there are two uses of the same
     // register, in which case only one will be a kill.
@@ -1610,7 +1610,7 @@ void FPS::handleSpecialFP(MachineBasicBlock::iterator &Inst) {
     unsigned FPKills = ((1u << NumFPRegs) - 1) & ~0xff;
     for (unsigned i = 0, e = MI.getNumOperands(); i != e; ++i) {
       MachineOperand &Op = MI.getOperand(i);
-      if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP6)
+      if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP5)
         continue;
       unsigned FPReg = getFPReg(Op);
 
@@ -1639,7 +1639,7 @@ void FPS::handleSpecialFP(MachineBasicBlock::iterator &Inst) {
     // With the stack layout fixed, rewrite the FP registers.
     for (unsigned i = 0, e = MI.getNumOperands(); i != e; ++i) {
       MachineOperand &Op = MI.getOperand(i);
-      if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP6)
+      if (!Op.isReg() || Op.getReg() < X86::FP0 || Op.getReg() > X86::FP5)
         continue;
 
       unsigned FPReg = getFPReg(Op);

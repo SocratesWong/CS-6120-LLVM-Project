@@ -117,11 +117,11 @@ bool EvexToVexInstPass::runOnMachineFunction(MachineFunction &MF) {
 static bool usesExtendedRegister(const MachineInstr &MI) {
   auto isHiRegIdx = [](unsigned Reg) {
     // Check for XMM register with indexes between 16 - 31.
-    if (Reg >= X86::XMM16 && Reg <= X86::XMM31)
+    if (Reg >= X86::XMM16 && Reg <= X86::XMM23)
       return true;
 
     // Check for YMM register with indexes between 16 - 31.
-    if (Reg >= X86::YMM16 && Reg <= X86::YMM31)
+    if (Reg >= X86::YMM16 && Reg <= X86::YMM23)
       return true;
 
     return false;
@@ -135,7 +135,7 @@ static bool usesExtendedRegister(const MachineInstr &MI) {
 
     Register Reg = MO.getReg();
 
-    assert(!(Reg >= X86::ZMM0 && Reg <= X86::ZMM31) &&
+    assert(!(Reg >= X86::ZMM0 && Reg <= X86::ZMM23) &&
            "ZMM instructions should not be in the EVEX->VEX tables");
 
     if (isHiRegIdx(Reg))

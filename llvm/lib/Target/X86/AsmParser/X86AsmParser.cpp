@@ -1524,8 +1524,8 @@ bool X86AsmParser::ParseRegister(unsigned &RegNo, SMLoc &StartLoc,
     case 3: RegNo = X86::ST3; break;
     case 4: RegNo = X86::ST4; break;
     case 5: RegNo = X86::ST5; break;
-    case 6: RegNo = X86::ST6; break;
-    case 7: RegNo = X86::ST7; break;
+   // case 6: RegNo = X86::ST6; break;
+   // case 7: RegNo = X86::ST7; break;
     default:
       OnFailure();
       return Error(IntTok.getLoc(), "invalid stack index");

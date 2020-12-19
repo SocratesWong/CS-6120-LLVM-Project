@@ -381,9 +381,9 @@ void X86InstPrinterCommon::printVKPair(const MCInst *MI, unsigned OpNo,
   case X86::K4_K5:
     printRegName(OS, X86::K4);
     return;
-  case X86::K6_K7:
-    printRegName(OS, X86::K6);
-    return;
+  //case X86::K6_K7:
+  //  printRegName(OS, X86::K6);
+  //  return;
   }
   llvm_unreachable("Unknown mask pair register name");
 }

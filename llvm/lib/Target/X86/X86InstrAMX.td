@@ -17,7 +17,7 @@
 let Predicates = [HasAMXTILE, In64BitMode] in {
   let SchedRW = [WriteSystem] in {
     let hasSideEffects = 1,
-        Defs = [TMM0,TMM1,TMM2,TMM3,TMM4,TMM5,TMM6,TMM7] in
+        Defs = [TMM0,TMM1,TMM2,TMM3,TMM4,TMM5/*,TMM6,TMM7*/] in
     def LDTILECFG : I <0x49, MRM0m, (outs), (ins opaquemem:$src),
                        "ldtilecfg\t$src",
                        [(int_x86_ldtilecfg addr:$src)]>, VEX, T8PS;
@@ -35,7 +35,7 @@ let Predicates = [HasAMXTILE, In64BitMode] in {
                         (ins sibmem:$src),
                         "tileloaddt1\t{$src, $dst|$dst, $src}", []>,
                         VEX, T8PD;
-    let Defs = [TMM0,TMM1,TMM2,TMM3,TMM4,TMM5,TMM6,TMM7] in
+    let Defs = [TMM0,TMM1,TMM2,TMM3,TMM4,TMM5/*,TMM6,TMM7*/] in
     def TILERELEASE : I<0x49, MRM_C0, (outs), (ins),
                         "tilerelease", [(int_x86_tilerelease)]>, VEX, T8PS;
     let mayStore = 1 in
@@ -49,7 +49,7 @@ let Predicates = [HasAMXTILE, In64BitMode] in {
 
     // Pseduo instruction for RA.
     let hasSideEffects = 1, mayLoad = 1,
-        Defs = [TMM0,TMM1,TMM2,TMM3,TMM4,TMM5,TMM6,TMM7] in
+        Defs = [TMM0,TMM1,TMM2,TMM3,TMM4,TMM5,/*TMM6,TMM7*/] in
     def PLDTILECFG : PseudoI <(outs TILECFG:$cfg), (ins opaquemem:$src), []>;
 
     let hasSideEffects = 1, mayStore = 1 in

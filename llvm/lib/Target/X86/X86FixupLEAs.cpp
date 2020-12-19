@@ -308,8 +308,8 @@ FixupLEAPass::searchBackwards(MachineOperand &p, MachineBasicBlock::iterator &I,
 }
 
 static inline bool isInefficientLEAReg(unsigned Reg) {
-  return Reg == X86::EBP || Reg == X86::RBP ||
-         Reg == X86::R13D || Reg == X86::R13;
+  return Reg == X86::EBP || Reg == X86::RBP /*||
+         Reg == X86::R13D || Reg == X86::R13*/;
 }
 
 /// Returns true if this LEA uses base an index registers, and the base register

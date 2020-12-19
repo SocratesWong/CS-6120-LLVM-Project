@@ -1267,9 +1267,9 @@ protected:
       case X86::RBP:
         return 1;
       case X86::R12:
-      case X86::R13:
-      case X86::R14:
-      case X86::R15:
+      //case X86::R13:
+      //case X86::R14:
+      //case X86::R15:
         return 2;
     }
     return 1;
@@ -1283,7 +1283,7 @@ private:
       X86::EBX, X86::ECX, X86::EDX, X86::EDI, X86::ESI, X86::EBP, 0
     };
     static const MCPhysReg CU64BitRegs[] = {
-      X86::RBX, X86::R12, X86::R13, X86::R14, X86::R15, X86::RBP, 0
+      X86::RBX, X86::R12 /*, X86::R13, X86::R14, X86::R15*/, X86::RBP, 0
     };
     const MCPhysReg *CURegs = Is64Bit ? CU64BitRegs : CU32BitRegs;
     for (int Idx = 1; *CURegs; ++CURegs, ++Idx)

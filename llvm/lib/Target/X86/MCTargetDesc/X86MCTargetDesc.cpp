@@ -117,8 +117,8 @@ void X86_MC::initLLVMToSEHAndCVRegMapping(MCRegisterInfo *MRI) {
       {codeview::RegisterId::ST3, X86::FP3},
       {codeview::RegisterId::ST4, X86::FP4},
       {codeview::RegisterId::ST5, X86::FP5},
-      {codeview::RegisterId::ST6, X86::FP6},
-      {codeview::RegisterId::ST7, X86::FP7},
+      //{codeview::RegisterId::ST6, X86::FP6},
+      //{codeview::RegisterId::ST7, X86::FP7},
 
       {codeview::RegisterId::MM0, X86::MM0},
       {codeview::RegisterId::MM1, X86::MM1},
@@ -126,8 +126,8 @@ void X86_MC::initLLVMToSEHAndCVRegMapping(MCRegisterInfo *MRI) {
       {codeview::RegisterId::MM3, X86::MM3},
       {codeview::RegisterId::MM4, X86::MM4},
       {codeview::RegisterId::MM5, X86::MM5},
-      {codeview::RegisterId::MM6, X86::MM6},
-      {codeview::RegisterId::MM7, X86::MM7},
+      //{codeview::RegisterId::MM6, X86::MM6},
+      //{codeview::RegisterId::MM7, X86::MM7},
 
       {codeview::RegisterId::XMM0, X86::XMM0},
       {codeview::RegisterId::XMM1, X86::XMM1},
@@ -142,10 +142,10 @@ void X86_MC::initLLVMToSEHAndCVRegMapping(MCRegisterInfo *MRI) {
       {codeview::RegisterId::XMM9, X86::XMM9},
       {codeview::RegisterId::XMM10, X86::XMM10},
       {codeview::RegisterId::XMM11, X86::XMM11},
-      {codeview::RegisterId::XMM12, X86::XMM12},
-      {codeview::RegisterId::XMM13, X86::XMM13},
-      {codeview::RegisterId::XMM14, X86::XMM14},
-      {codeview::RegisterId::XMM15, X86::XMM15},
+      //{codeview::RegisterId::XMM12, X86::XMM12},
+      //{codeview::RegisterId::XMM13, X86::XMM13},
+      //{codeview::RegisterId::XMM14, X86::XMM14},
+      //{codeview::RegisterId::XMM15, X86::XMM15},
 
       {codeview::RegisterId::SIL, X86::SIL},
       {codeview::RegisterId::DIL, X86::DIL},
@@ -164,33 +164,33 @@ void X86_MC::initLLVMToSEHAndCVRegMapping(MCRegisterInfo *MRI) {
       {codeview::RegisterId::R10, X86::R10},
       {codeview::RegisterId::R11, X86::R11},
       {codeview::RegisterId::R12, X86::R12},
-      {codeview::RegisterId::R13, X86::R13},
-      {codeview::RegisterId::R14, X86::R14},
-      {codeview::RegisterId::R15, X86::R15},
+      //{codeview::RegisterId::R13, X86::R13},
+      //{codeview::RegisterId::R14, X86::R14},
+      //{codeview::RegisterId::R15, X86::R15},
       {codeview::RegisterId::R8B, X86::R8B},
       {codeview::RegisterId::R9B, X86::R9B},
       {codeview::RegisterId::R10B, X86::R10B},
       {codeview::RegisterId::R11B, X86::R11B},
       {codeview::RegisterId::R12B, X86::R12B},
-      {codeview::RegisterId::R13B, X86::R13B},
-      {codeview::RegisterId::R14B, X86::R14B},
-      {codeview::RegisterId::R15B, X86::R15B},
+      //{codeview::RegisterId::R13B, X86::R13B},
+      //{codeview::RegisterId::R14B, X86::R14B},
+      //{codeview::RegisterId::R15B, X86::R15B},
       {codeview::RegisterId::R8W, X86::R8W},
       {codeview::RegisterId::R9W, X86::R9W},
       {codeview::RegisterId::R10W, X86::R10W},
       {codeview::RegisterId::R11W, X86::R11W},
       {codeview::RegisterId::R12W, X86::R12W},
-      {codeview::RegisterId::R13W, X86::R13W},
-      {codeview::RegisterId::R14W, X86::R14W},
-      {codeview::RegisterId::R15W, X86::R15W},
+      //{codeview::RegisterId::R13W, X86::R13W},
+      //{codeview::RegisterId::R14W, X86::R14W},
+      //{codeview::RegisterId::R15W, X86::R15W},
       {codeview::RegisterId::R8D, X86::R8D},
       {codeview::RegisterId::R9D, X86::R9D},
       {codeview::RegisterId::R10D, X86::R10D},
       {codeview::RegisterId::R11D, X86::R11D},
       {codeview::RegisterId::R12D, X86::R12D},
-      {codeview::RegisterId::R13D, X86::R13D},
-      {codeview::RegisterId::R14D, X86::R14D},
-      {codeview::RegisterId::R15D, X86::R15D},
+      //{codeview::RegisterId::R13D, X86::R13D},
+      //{codeview::RegisterId::R14D, X86::R14D},
+      //{codeview::RegisterId::R15D, X86::R15D},
       {codeview::RegisterId::AMD64_YMM0, X86::YMM0},
       {codeview::RegisterId::AMD64_YMM1, X86::YMM1},
       {codeview::RegisterId::AMD64_YMM2, X86::YMM2},
@@ -215,14 +215,14 @@ void X86_MC::initLLVMToSEHAndCVRegMapping(MCRegisterInfo *MRI) {
       {codeview::RegisterId::AMD64_YMM21, X86::YMM21},
       {codeview::RegisterId::AMD64_YMM22, X86::YMM22},
       {codeview::RegisterId::AMD64_YMM23, X86::YMM23},
-      {codeview::RegisterId::AMD64_YMM24, X86::YMM24},
-      {codeview::RegisterId::AMD64_YMM25, X86::YMM25},
-      {codeview::RegisterId::AMD64_YMM26, X86::YMM26},
-      {codeview::RegisterId::AMD64_YMM27, X86::YMM27},
-      {codeview::RegisterId::AMD64_YMM28, X86::YMM28},
-      {codeview::RegisterId::AMD64_YMM29, X86::YMM29},
-      {codeview::RegisterId::AMD64_YMM30, X86::YMM30},
-      {codeview::RegisterId::AMD64_YMM31, X86::YMM31},
+      //{codeview::RegisterId::AMD64_YMM24, X86::YMM24},
+      //{codeview::RegisterId::AMD64_YMM25, X86::YMM25},
+      //{codeview::RegisterId::AMD64_YMM26, X86::YMM26},
+      //{codeview::RegisterId::AMD64_YMM27, X86::YMM27},
+      //{codeview::RegisterId::AMD64_YMM28, X86::YMM28},
+      //{codeview::RegisterId::AMD64_YMM29, X86::YMM29},
+      //{codeview::RegisterId::AMD64_YMM30, X86::YMM30},
+      //{codeview::RegisterId::AMD64_YMM31, X86::YMM31},
       {codeview::RegisterId::AMD64_ZMM0, X86::ZMM0},
       {codeview::RegisterId::AMD64_ZMM1, X86::ZMM1},
       {codeview::RegisterId::AMD64_ZMM2, X86::ZMM2},
@@ -247,22 +247,22 @@ void X86_MC::initLLVMToSEHAndCVRegMapping(MCRegisterInfo *MRI) {
       {codeview::RegisterId::AMD64_ZMM21, X86::ZMM21},
       {codeview::RegisterId::AMD64_ZMM22, X86::ZMM22},
       {codeview::RegisterId::AMD64_ZMM23, X86::ZMM23},
-      {codeview::RegisterId::AMD64_ZMM24, X86::ZMM24},
-      {codeview::RegisterId::AMD64_ZMM25, X86::ZMM25},
-      {codeview::RegisterId::AMD64_ZMM26, X86::ZMM26},
-      {codeview::RegisterId::AMD64_ZMM27, X86::ZMM27},
-      {codeview::RegisterId::AMD64_ZMM28, X86::ZMM28},
-      {codeview::RegisterId::AMD64_ZMM29, X86::ZMM29},
-      {codeview::RegisterId::AMD64_ZMM30, X86::ZMM30},
-      {codeview::RegisterId::AMD64_ZMM31, X86::ZMM31},
+      //{codeview::RegisterId::AMD64_ZMM24, X86::ZMM24},
+      //{codeview::RegisterId::AMD64_ZMM25, X86::ZMM25},
+      //{codeview::RegisterId::AMD64_ZMM26, X86::ZMM26},
+      //{codeview::RegisterId::AMD64_ZMM27, X86::ZMM27},
+      //{codeview::RegisterId::AMD64_ZMM28, X86::ZMM28},
+      //{codeview::RegisterId::AMD64_ZMM29, X86::ZMM29},
+      //{codeview::RegisterId::AMD64_ZMM30, X86::ZMM30},
+      //{codeview::RegisterId::AMD64_ZMM31, X86::ZMM31},
       {codeview::RegisterId::AMD64_K0, X86::K0},
       {codeview::RegisterId::AMD64_K1, X86::K1},
       {codeview::RegisterId::AMD64_K2, X86::K2},
       {codeview::RegisterId::AMD64_K3, X86::K3},
       {codeview::RegisterId::AMD64_K4, X86::K4},
       {codeview::RegisterId::AMD64_K5, X86::K5},
-      {codeview::RegisterId::AMD64_K6, X86::K6},
-      {codeview::RegisterId::AMD64_K7, X86::K7},
+      //{codeview::RegisterId::AMD64_K6, X86::K6},
+      //{codeview::RegisterId::AMD64_K7, X86::K7},
       {codeview::RegisterId::AMD64_XMM16, X86::XMM16},
       {codeview::RegisterId::AMD64_XMM17, X86::XMM17},
       {codeview::RegisterId::AMD64_XMM18, X86::XMM18},
@@ -271,14 +271,14 @@ void X86_MC::initLLVMToSEHAndCVRegMapping(MCRegisterInfo *MRI) {
       {codeview::RegisterId::AMD64_XMM21, X86::XMM21},
       {codeview::RegisterId::AMD64_XMM22, X86::XMM22},
       {codeview::RegisterId::AMD64_XMM23, X86::XMM23},
-      {codeview::RegisterId::AMD64_XMM24, X86::XMM24},
-      {codeview::RegisterId::AMD64_XMM25, X86::XMM25},
-      {codeview::RegisterId::AMD64_XMM26, X86::XMM26},
-      {codeview::RegisterId::AMD64_XMM27, X86::XMM27},
-      {codeview::RegisterId::AMD64_XMM28, X86::XMM28},
-      {codeview::RegisterId::AMD64_XMM29, X86::XMM29},
-      {codeview::RegisterId::AMD64_XMM30, X86::XMM30},
-      {codeview::RegisterId::AMD64_XMM31, X86::XMM31},
+      //{codeview::RegisterId::AMD64_XMM24, X86::XMM24},
+      //{codeview::RegisterId::AMD64_XMM25, X86::XMM25},
+      //{codeview::RegisterId::AMD64_XMM26, X86::XMM26},
+      //{codeview::RegisterId::AMD64_XMM27, X86::XMM27},
+      //{codeview::RegisterId::AMD64_XMM28, X86::XMM28},
+      //{codeview::RegisterId::AMD64_XMM29, X86::XMM29},
+      //{codeview::RegisterId::AMD64_XMM30, X86::XMM30},
+      //{codeview::RegisterId::AMD64_XMM31, X86::XMM31},
 
   };
   for (unsigned I = 0; I < array_lengthof(RegMap); ++I)
@@ -662,12 +662,12 @@ MCRegister llvm::getX86SubSuperRegisterOrZero(MCRegister Reg, unsigned Size,
         return X86::R11B;
       case X86::R12B: case X86::R12W: case X86::R12D: case X86::R12:
         return X86::R12B;
-      case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
+     /* case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
         return X86::R13B;
       case X86::R14B: case X86::R14W: case X86::R14D: case X86::R14:
         return X86::R14B;
       case X86::R15B: case X86::R15W: case X86::R15D: case X86::R15:
-        return X86::R15B;
+        return X86::R15B;*/
       }
     }
   case 16:
@@ -699,12 +699,12 @@ MCRegister llvm::getX86SubSuperRegisterOrZero(MCRegister Reg, unsigned Size,
       return X86::R11W;
     case X86::R12B: case X86::R12W: case X86::R12D: case X86::R12:
       return X86::R12W;
-    case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
+    /*case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
       return X86::R13W;
     case X86::R14B: case X86::R14W: case X86::R14D: case X86::R14:
       return X86::R14W;
     case X86::R15B: case X86::R15W: case X86::R15D: case X86::R15:
-      return X86::R15W;
+      return X86::R15W;*/
     }
   case 32:
     switch (Reg.id()) {
@@ -735,12 +735,12 @@ MCRegister llvm::getX86SubSuperRegisterOrZero(MCRegister Reg, unsigned Size,
       return X86::R11D;
     case X86::R12B: case X86::R12W: case X86::R12D: case X86::R12:
       return X86::R12D;
-    case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
+    /*case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
       return X86::R13D;
     case X86::R14B: case X86::R14W: case X86::R14D: case X86::R14:
       return X86::R14D;
     case X86::R15B: case X86::R15W: case X86::R15D: case X86::R15:
-      return X86::R15D;
+      return X86::R15D;*/
     }
   case 64:
     switch (Reg.id()) {
@@ -771,12 +771,12 @@ MCRegister llvm::getX86SubSuperRegisterOrZero(MCRegister Reg, unsigned Size,
       return X86::R11;
     case X86::R12B: case X86::R12W: case X86::R12D: case X86::R12:
       return X86::R12;
-    case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
+    /*case X86::R13B: case X86::R13W: case X86::R13D: case X86::R13:
       return X86::R13;
     case X86::R14B: case X86::R14W: case X86::R14D: case X86::R14:
       return X86::R14;
     case X86::R15B: case X86::R15W: case X86::R15D: case X86::R15:
-      return X86::R15;
+      return X86::R15;*/
     }
   }
 }

@@ -1172,25 +1172,25 @@ namespace X86II {
   /// \returns true if the MachineOperand is a x86-64 extended (r8 or
   /// higher) register,  e.g. r8, xmm8, xmm13, etc.
   inline bool isX86_64ExtendedReg(unsigned RegNo) {
-    if ((RegNo >= X86::XMM8 && RegNo <= X86::XMM31) ||
-        (RegNo >= X86::YMM8 && RegNo <= X86::YMM31) ||
-        (RegNo >= X86::ZMM8 && RegNo <= X86::ZMM31))
+    if ((RegNo >= X86::XMM8 && RegNo <= X86::XMM23) ||
+        (RegNo >= X86::YMM8 && RegNo <= X86::YMM23) ||
+        (RegNo >= X86::ZMM8 && RegNo <= X86::ZMM23))
       return true;
 
     switch (RegNo) {
     default: break;
     case X86::R8:    case X86::R9:    case X86::R10:   case X86::R11:
-    case X86::R12:   case X86::R13:   case X86::R14:   case X86::R15:
+    case X86::R12:   //case X86::R13:   case X86::R14:   case X86::R15:
     case X86::R8D:   case X86::R9D:   case X86::R10D:  case X86::R11D:
-    case X86::R12D:  case X86::R13D:  case X86::R14D:  case X86::R15D:
+    case X86::R12D:  //case X86::R13D:  case X86::R14D:  case X86::R15D:
     case X86::R8W:   case X86::R9W:   case X86::R10W:  case X86::R11W:
-    case X86::R12W:  case X86::R13W:  case X86::R14W:  case X86::R15W:
+    case X86::R12W:  //case X86::R13W:  case X86::R14W:  case X86::R15W:
     case X86::R8B:   case X86::R9B:   case X86::R10B:  case X86::R11B:
-    case X86::R12B:  case X86::R13B:  case X86::R14B:  case X86::R15B:
+    case X86::R12B:  //case X86::R13B:  case X86::R14B:  case X86::R15B:
     case X86::CR8:   case X86::CR9:   case X86::CR10:  case X86::CR11:
-    case X86::CR12:  case X86::CR13:  case X86::CR14:  case X86::CR15:
+    case X86::CR12:  //case X86::CR13:  case X86::CR14:  case X86::CR15:
     case X86::DR8:   case X86::DR9:   case X86::DR10:  case X86::DR11:
-    case X86::DR12:  case X86::DR13:  case X86::DR14:  case X86::DR15:
+    case X86::DR12:  //case X86::DR13:  case X86::DR14:  case X86::DR15:
       return true;
     }
     return false;
@@ -1199,9 +1199,9 @@ namespace X86II {
   /// \returns true if the MemoryOperand is a 32 extended (zmm16 or higher)
   /// registers, e.g. zmm21, etc.
   static inline bool is32ExtendedReg(unsigned RegNo) {
-    return ((RegNo >= X86::XMM16 && RegNo <= X86::XMM31) ||
-            (RegNo >= X86::YMM16 && RegNo <= X86::YMM31) ||
-            (RegNo >= X86::ZMM16 && RegNo <= X86::ZMM31));
+    return ((RegNo >= X86::XMM16 && RegNo <= X86::XMM23) ||
+            (RegNo >= X86::YMM16 && RegNo <= X86::YMM23) ||
+            (RegNo >= X86::ZMM16 && RegNo <= X86::ZMM23));
   }
 
 

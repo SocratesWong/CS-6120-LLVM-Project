@@ -2596,9 +2596,9 @@ GetScratchRegister(bool Is64Bit, bool IsLP64, const MachineFunction &MF, bool Pr
 
   // Erlang stuff.
   if (CallingConvention == CallingConv::HiPE) {
-    if (Is64Bit)
-      return Primary ? X86::R14 : X86::R13;
-    else
+   // if (Is64Bit)
+    //  return Primary ? X86::R14 : X86::R13;
+    //else
       return Primary ? X86::EBX : X86::EDI;
   }
 

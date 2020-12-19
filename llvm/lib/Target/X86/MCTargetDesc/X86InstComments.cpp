@@ -234,13 +234,13 @@ using namespace llvm;
   CASE_AVX_INS_COMMON(Inst##SS4, , mr_Int)
 
 static unsigned getVectorRegSize(unsigned RegNo) {
-  if (X86::ZMM0 <= RegNo && RegNo <= X86::ZMM31)
+  if (X86::ZMM0 <= RegNo && RegNo <= X86::ZMM23)
     return 512;
-  if (X86::YMM0 <= RegNo && RegNo <= X86::YMM31)
+  if (X86::YMM0 <= RegNo && RegNo <= X86::YMM23)
     return 256;
-  if (X86::XMM0 <= RegNo && RegNo <= X86::XMM31)
+  if (X86::XMM0 <= RegNo && RegNo <= X86::XMM23)
     return 128;
-  if (X86::MM0 <= RegNo && RegNo <= X86::MM7)
+  if (X86::MM0 <= RegNo && RegNo <= X86::MM5)
     return 64;
 
   llvm_unreachable("Unknown vector reg!");

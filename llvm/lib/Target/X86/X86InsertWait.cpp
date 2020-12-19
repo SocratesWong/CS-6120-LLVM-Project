@@ -58,7 +58,7 @@ FunctionPass *llvm::createX86InsertX87waitPass() { return new WaitInsert(); }
 /// Return true if the Reg is X87 register.
 static bool isX87Reg(unsigned Reg) {
   return (Reg == X86::FPCW || Reg == X86::FPSW ||
-          (Reg >= X86::ST0 && Reg <= X86::ST7));
+          (Reg >= X86::ST0 && Reg <= X86::ST5));
 }
 
 /// check if the instruction is X87 instruction

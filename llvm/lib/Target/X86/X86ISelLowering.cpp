@@ -51012,8 +51012,8 @@ X86TargetLowering::getRegForInlineAsmConstraint(const TargetRegisterInfo *TRI,
           Constraint[5] == ')' && Constraint[6] == '}') {
         // st(7) is not allocatable and thus not a member of RFP80. Return
         // singleton class in cases where we have a reference to it.
-        if (Constraint[4] == '7')
-          return std::make_pair(X86::FP7, &X86::RFP80_7RegClass);
+        //if (Constraint[4] == '7')
+          //return std::make_pair(X86::FP7, &X86::RFP80_7RegClass);
         return std::make_pair(X86::FP0 + Constraint[4] - '0',
                               &X86::RFP80RegClass);
       }

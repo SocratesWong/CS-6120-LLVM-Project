@@ -96,7 +96,7 @@ void X86TileConfig::getAnalysisUsage(AnalysisUsage &AU) const {
 }
 
 static unsigned getTilePhysRegIndex(Register PhysReg) {
-  assert((PhysReg >= X86::TMM0 && X86::TMM0 <= X86::TMM7) &&
+  assert((PhysReg >= X86::TMM0 && X86::TMM0 <= X86::TMM5) &&
          "Tile register number is invalid");
   return (PhysReg - X86::TMM0);
 }
